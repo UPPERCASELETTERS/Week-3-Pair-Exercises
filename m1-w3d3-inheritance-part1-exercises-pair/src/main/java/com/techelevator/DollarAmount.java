@@ -5,9 +5,14 @@ public class DollarAmount {
     public static final DollarAmount ZERO_DOLLARS = new DollarAmount(0);
     
     private int totalAmountInCents;
+    private boolean isNegative;
     
     public DollarAmount(int totalAmountInCents) {
         this.totalAmountInCents = totalAmountInCents;
+    }
+    
+    public DollarAmount(int dollars, int cents) {
+    	this.totalAmountInCents = (dollars * 100) + cents;
     }
     
     public int getCents() {
@@ -70,4 +75,17 @@ public class DollarAmount {
     	return totalAmountInCents;
     }
     
+    @Override
+    public String toString() {
+    	String result = "";
+    	if(isNegative) {
+    		result += "-";
+    	}
+    	result += "$" + getDollars() + ".";
+    	if(getCents() <10) {
+    		result += "0";
+    	}
+    	return result + getCents();
+    }
 }
+    
