@@ -5,9 +5,9 @@ public class BankAccount {
 	private String accountNumber;
 	private DollarAmount balance= new DollarAmount(0);
 	
-	public BankAccount (String accountNumber, DollarAmount balance) {
+	public BankAccount (String accountNumber) {
 		this.accountNumber = accountNumber;
-		this.balance = balance;
+		
 	}
 	
 	public BankAccount () {
